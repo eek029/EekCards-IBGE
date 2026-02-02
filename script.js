@@ -8,69 +8,123 @@
 // ============================================
 
 const flashcardsDatabase = [
-    // Código de Ética IBGE (6 cards)
-    {
-        id: 1,
-        category: 'Ética IBGE',
-        question: 'Qual o principal objetivo do Código de Ética do IBGE?',
-        answer: 'Estabelecer princípios, valores e deveres que orientam a conduta dos servidores do IBGE, assegurando a transparência, imparcialidade e qualidade na produção de informações estatísticas e geocientíficas.'
-    },
-    {
-        id: 2,
-        category: 'Ética IBGE',
-        question: 'De acordo com o Código de Ética, qual é o dever fundamental do servidor IBGE em relação aos dados coletados?',
-        answer: 'Garantir o sigilo absoluto das informações individualizadas coletadas, utilizando-as exclusivamente para fins estatísticos, conforme determina a Lei do Sigilo Estatístico.'
-    },
-    {
-        id: 3,
-        category: 'Ética IBGE',
-        question: 'É permitido ao servidor IBGE divulgar informações que identifiquem respondentes de pesquisas?',
-        answer: 'NÃO. É terminantemente vedado. O sigilo é uma das premissas fundamentais da ética do IBGE, protegendo a privacidade dos informantes e garantindo a credibilidade institucional.'
-    },
-    {
-        id: 4,
-        category: 'Ética IBGE',
-        question: 'Quais são os valores éticos centrais que devem nortear a conduta do servidor IBGE?',
-        answer: 'Imparcialidade, transparência, qualidade, compromisso com a sociedade, respeito à diversidade e responsabilidade com o patrimônio público.'
-    },
-    {
-        id: 5,
-        category: 'Ética IBGE',
-        question: 'Como o servidor IBGE deve agir ao identificar irregularidades no trabalho?',
-        answer: 'Deve comunicar imediatamente aos superiores hierárquicos, agindo com responsabilidade e zelo para preservar a integridade e credibilidade da instituição.'
-    },
-    {
-        id: 6,
-        category: 'Ética IBGE',
-        question: 'O que configura conflito de interesses para um servidor do IBGE?',
-        answer: 'Situações onde interesses pessoais, familiares ou financeiros possam comprometer a imparcialidade e objetividade na coleta, tratamento ou divulgação de informações estatísticas e geográficas.'
-    },
+    // --- ÉTICA NO SERVIÇO PÚBLICO (25 cards) ---
+    { id: 1, category: 'Ética', question: "O que é o 'Primado do Bem Comum'?", answer: "A consciência de que o trabalho do servidor é integrado na vida da comunidade." },
+    { id: 2, category: 'Ética', question: "A moralidade administrativa se limita à distinção entre bem e mal?", answer: "Não. Deve ser acrescida da ideia de que o fim é sempre o Bem Comum." },
+    { id: 3, category: 'Ética', question: "Qual o valor da transparência para a administração pública?", answer: "A publicidade dos atos administrativos é requisito de eficácia e moralidade." },
+    { id: 4, category: 'Ética', question: "O que é a 'Verdade' no serviço público?", answer: "O servidor não pode omitir a verdade, mesmo que contrária aos seus interesses ou da administração." },
+    { id: 5, category: 'Ética', question: "Dano moral ao cidadão gera que tipo de infração?", answer: "Infração ética grave, pois o servidor deve tratar todos com cortesia e urbanidade." },
+    { id: 6, category: 'Ética', question: "O que diz o Código sobre o sigilo estatístico?", answer: "As informações individuais de pessoas/empresas são confidenciais e usadas apenas para estatística." },
+    { id: 7, category: 'Ética', question: "É permitido ao servidor aceitar presentes?", answer: "Não. É vedado aceitar presentes, doações ou vantagens de qualquer espécie." },
+    { id: 8, category: 'Ética', question: "Qual a função da Comissão de Ética do IBGE?", answer: "Orientar, aconselhar e aplicar a pena de Censura ao servidor." },
+    { id: 9, category: 'Ética', question: "O trabalho externo do servidor é considerado serviço público?", answer: "Sim. O servidor é servidor inclusive fora do horário e local de trabalho para fins éticos." },
+    { id: 10, category: 'Ética', question: "O que é o 'conflito de interesses'?", answer: "Situação em que o interesse privado pode influenciar o cumprimento do dever público." },
+    { id: 11, category: 'Ética', question: "Qual o principal objetivo do Código de Ética do IBGE?", answer: "Estabelecer princípios, valores e deveres que orientam a conduta dos servidores do IBGE, assegurando a transparência, imparcialidade e qualidade." },
+    { id: 12, category: 'Ética', question: "O servidor pode usar cargo para obter vantagens?", answer: "Não. É vedado usar o cargo ou função para lograr proveito pessoal ou para terceiros." },
+    { id: 13, category: 'Ética', question: "A cortesia no atendimento é opcional?", answer: "Não. É dever funcional tratar todos com respeito, cortesia e atenção." },
+    { id: 14, category: 'Ética', question: "O que caracteriza nepotismo?", answer: "Nomeação de parentes para cargos ou funções públicas, violando a impessoalidade." },
+    { id: 15, category: 'Ética', question: "O servidor pode ser punido por conduta fora do trabalho?", answer: "Sim, se a conduta afetar a dignidade da função pública ou desrespeitar valores éticos." },
+    { id: 16, category: 'Ética', question: "Qual a importância da imparcialidade?", answer: "Garante tratamento igualitário e decisões baseadas em critérios técnicos, não em preferências pessoais." },
+    { id: 17, category: 'Ética', question: "O que é assiduidade no serviço público?", answer: "Dever de comparecimento regular ao trabalho, cumprindo horários e prazos estabelecidos." },
+    { id: 18, category: 'Ética', question: "Servidor pode omitir irregularidades?", answer: "Não. Deve comunicar imediatamente qualquer irregularidade de que tenha conhecimento." },
+    { id: 19, category: 'Ética', question: "O que caracteriza a probidade administrativa?", answer: "Agir com honestidade, integridade e lealdade às instituições públicas." },
+    { id: 20, category: 'Ética', question: "Pode usar informações privilegiadas?", answer: "Não. É vedado usar informações obtidas no cargo para benefício próprio ou alheio." },
+    { id: 21, category: 'Ética', question: "O que é zelo no serviço público?", answer: "Dedicação e cuidado na execução das tarefas, buscando excelência e qualidade." },
+    { id: 22, category: 'Ética', question: "Servidor pode receber comissão de fornecedores?", answer: "Não. É vedado receber qualquer vantagem de fornecedores ou interessados." },
+    { id: 23, category: 'Ética', question: "O que é a responsabilidade no serviço público?", answer: "Assumir as consequências de seus atos e decisões perante a sociedade." },
+    { id: 24, category: 'Ética', question: "Pode retardar procedimento sem motivo justo?", answer: "Não. É dever dar andamento a processos e documentos na ordem cronológica." },
+    { id: 25, category: 'Ética', question: "O que caracteriza conduta exemplar?", answer: "Ser referência de integridade, eficiência e respeito aos princípios éticos." },
 
-    // Setor Censitário (4 cards)
-    {
-        id: 7,
-        category: 'Setor Censitário',
-        question: 'O que é um Setor Censitário?',
-        answer: 'É a menor unidade territorial, formada por área contínua, respeitando limites físicos-geográficos definidos, com dimensão adequada à operação de coleta do Censo, permitindo que um recenseador complete a coleta em seu território dentro do prazo estabelecido.'
-    },
-    {
-        id: 8,
-        category: 'Setor Censitário',
-        question: 'Quais são os dois principais tipos de Setores Censitários quanto à localização?',
-        answer: 'Setores Urbanos (localizados em áreas urbanizadas de cidades e vilas) e Setores Rurais (localizados em áreas rurais, incluindo aglomerados rurais, povoados e áreas isoladas).'
-    },
-    {
-        id: 9,
-        category: 'Setor Censitário',
-        question: 'Qual é o critério fundamental para delimitação de um Setor Censitário?',
-        answer: 'Deve respeitar limites físicos perceptíveis em campo (ruas, rios, ferrovias, etc.), ter área contínua, ser percorrível por um único recenseador, e conter aproximadamente 250 a 350 domicílios em área urbana.'
-    },
-    {
-        id: 10,
-        category: 'Setor Censitário',
-        question: 'Por que os Setores Censitários são importantes para o planejamento do Censo?',
-        answer: 'Permitem a organização operacional eficiente da coleta, facilitam o controle de qualidade, possibilitam a divulgação de dados em pequenas áreas geográficas e servem como base territorial para pesquisas e políticas públicas locais.'
-    }
+    // --- CONHECIMENTOS TÉCNICOS: OPERAÇÃO E COLETA (40 cards) ---
+    { id: 26, category: 'Técnico', question: "O que é o Setor Censitário?", answer: "A menor unidade territorial de trabalho para fins de controle e coleta." },
+    { id: 27, category: 'Técnico', question: "O que é um Domicílio Particular Permanente?", answer: "Local construído para fins de habitação, ocupado na data de referência." },
+    { id: 28, category: 'Técnico', question: "O que caracteriza um Morador?", answer: "Pessoa que tem o domicílio como local habitual de residência." },
+    { id: 29, category: 'Técnico', question: "O que é o DMC?", answer: "Dispositivo Móvel de Coleta, o equipamento usado pelo agente em campo." },
+    { id: 30, category: 'Técnico', question: "O que é a Data de Referência?", answer: "Instante exato ao qual os dados coletados devem se referir (ex: meia-noite de tal dia)." },
+    { id: 31, category: 'Técnico', question: "O que é um Setor de Aglomerado Subnormal?", answer: "Assentamentos irregulares (favelas, invasões) que exigem coleta especial." },
+    { id: 32, category: 'Técnico', question: "O que deve ser feito se o morador recusar a entrevista?", answer: "O agente deve manter a cortesia, explicar a importância e, se persistir, comunicar ao supervisor." },
+    { id: 33, category: 'Técnico', question: "Qual a função do Questionário Básico?", answer: "Coletar características principais do domicílio e de todos os moradores." },
+    { id: 34, category: 'Técnico', question: "O que é a 'Unidade de Visita'?", answer: "A estrutura física (casa, apto) que o agente identifica e registra no DMC." },
+    { id: 35, category: 'Técnico', question: "Pode-se preencher dados por estimativa?", answer: "Jamais. Todos os dados devem ser obtidos via entrevista direta ou informante qualificado." },
+    { id: 36, category: 'Técnico', question: "O que é o Mapa do Setor?", answer: "Representação gráfica do setor que orienta o agente sobre os limites de trabalho." },
+    { id: 37, category: 'Técnico', question: "O que caracteriza um Domicílio Coletivo?", answer: "Instituições como hotéis, hospitais, quartéis e presídios onde a relação é de norma." },
+    { id: 38, category: 'Técnico', question: "Quais são os dois tipos de setores quanto à localização?", answer: "Setores Urbanos (áreas urbanizadas) e Setores Rurais (áreas rurais e aglomerados)." },
+    { id: 39, category: 'Técnico', question: "Critério fundamental para delimitação de setor?", answer: "Respeitar limites físicos perceptíveis em campo (ruas, rios, ferrovias)." },
+    { id: 40, category: 'Técnico', question: "Quantos domicílios aproximadamente deve ter um setor urbano?", answer: "Aproximadamente 250 a 350 domicílios." },
+    { id: 41, category: 'Técnico', question: "O que é um informante qualificado?", answer: "Pessoa capaz de fornecer informações sobre o domicílio e seus moradores." },
+    { id: 42, category: 'Técnico', question: "O que são os limites do setor?", answer: "Fronteiras geográficas definidas que delimitam a área de trabalho do recenseador." },
+    { id: 43, category: 'Técnico', question: "O que se registra sobre cada domicílio?", answer: "Localização, características, condições de ocupação e dados dos moradores." },
+    { id: 44, category: 'Técnico', question: "O que é controle de qualidade na coleta?", answer: "Supervisão sistemática para garantir precisão, completude e consistência dos dados." },
+    { id: 45, category: 'Técnico', question: "Quando deve ser feita revisita?", answer: "Quando houver recusa, ausência de moradores ou necessidade de complementar dados." },
+    { id: 46, category: 'Técnico', question: "O que é croqui do setor?", answer: "Desenho esquemático detalhado das quadras e domicílios do setor." },
+    { id: 47, category: 'Técnico', question: "Como identificar um domicílio vago?", answer: "Imóvel sem moradores na data de referência, mas em condições de ser habitado." },
+    { id: 48, category: 'Técnico', question: "O que é endereço de referência?", answer: "Localização geográfica exata do domicílio com logradouro, número e complemento." },
+    { id: 49, category: 'Técnico', question: "Qual a importância do sigilo na coleta?", answer: "Proteger a privacidade dos informantes e garantir a credibilidade institucional." },
+    { id: 50, category: 'Técnico', question: "O que fazer com domicílio fechado?", answer: "Tentar contato em diferentes horários e, persistindo, consultar vizinhos ou síndico." },
+    { id: 51, category: 'Técnico', question: "O que é área de ponderação?", answer: "Agrupamento de setores censitários para fins de divulgação de resultados amostrais." },
+    { id: 52, category: 'Técnico', question: "Como proceder com endereço inexistente?", answer: "Registrar como não encontrado e reportar ao supervisor para verificação." },
+    { id: 53, category: 'Técnico', question: "O que é sincronização de dados?", answer: "Envio periódico das informações coletadas do DMC para o sistema central." },
+    { id: 54, category: 'Técnico', question: "Quando usar questionário da amostra?", answer: "Apenas nos domicílios selecionados pela metodologia estatística do IBGE." },
+    { id: 55, category: 'Técnico', question: "O que é crítica no DMC?", answer: "Validação automática que identifica inconsistências nos dados durante a coleta." },
+    { id: 56, category: 'Técnico', question: "Como tratar dados sensíveis?", answer: "Com absoluto sigilo, sem compartilhar informações individualizadas." },
+    { id: 57, category: 'Técnico', question: "O que é cobertura censitária?", answer: "Garantia de que todos os domicílios e pessoas foram identificados e pesquisados." },
+    { id: 58, category: 'Técnico', question: "Prazo típico de coleta em um setor?", answer: "Varia conforme densidade, mas geralmente de 2 a 4 semanas." },
+    { id: 59, category: 'Técnico', question: "O que fazer se encontrar domicílio novo?", answer: "Incluir na coleta e reportar ao supervisor para atualização da base territorial." },
+    { id: 60, category: 'Técnico', question: "O que é face de quadra?", answer: "Lado ou trecho de quarteirão delimitado por esquinas ou mudanças de direção." },
+    { id: 61, category: 'Técnico', question: "Como identificar domicílios coletivos?", answer: "Verificar relação institucional entre moradores e ausência de laços familiares." },
+    { id: 62, category: 'Técnico', question: "O que registrar sobre domicílio de uso ocasional?", answer: "Domicílio que serve para descanso de fins de semana ou férias, sem morador permanente." },
+    { id: 63, category: 'Técnico', question: "Diferença entre residente e morador?", answer: "Morador tem residência habitual; residente pode estar temporariamente no local." },
+    { id: 64, category: 'Técnico', question: "O que é importância do GPS no DMC?", answer: "Permite georreferenciamento preciso dos domicílios visitados." },
+    { id: 65, category: 'Técnico', question: "Como proceder com condomínios?", answer: "Identificar cada unidade autônoma como domicílio independente." },
+
+    // --- GEOGRAFIA (30 cards) ---
+    { id: 66, category: 'Geografia', question: "O que são as Regiões Geográficas Imediatas?", answer: "Divisões que têm a rede urbana e centros regionais como base de integração." },
+    { id: 67, category: 'Geografia', question: "Qual a diferença entre Relevo e Solo?", answer: "Relevo é a forma da superfície terrestre; Solo é a camada superficial decomposta." },
+    { id: 68, category: 'Geografia', question: "O que é Urbanização?", answer: "Processo de crescimento da população urbana superior ao crescimento da população rural." },
+    { id: 69, category: 'Geografia', question: "O que caracteriza o Clima Semiárido no Brasil?", answer: "Baixas precipitações e temperaturas elevadas, comum no Sertão Nordestino." },
+    { id: 70, category: 'Geografia', question: "O que é o Bioma Cerrado?", answer: "Savana brasileira, com árvores de troncos retorcidos e cascas grossas." },
+    { id: 71, category: 'Geografia', question: "Qual a maior bacia hidrográfica do mundo presente no Brasil?", answer: "Bacia Amazônica." },
+    { id: 72, category: 'Geografia', question: "O que é o IBGE?", answer: "Instituto Brasileiro de Geografia e Estatística, principal provedor de dados do país." },
+    { id: 73, category: 'Geografia', question: "O que é Densidade Demográfica?", answer: "Razão entre o número de habitantes e a área do território (hab/km²)." },
+    { id: 74, category: 'Geografia', question: "O que são as Metrópoles?", answer: "Centros urbanos de grande porte com influência nacional ou regional." },
+    { id: 75, category: 'Geografia', question: "O que é o Crescimento Vegetativo?", answer: "Diferença entre a taxa de natalidade e a taxa de mortalidade." },
+    { id: 76, category: 'Geografia', question: "Quais as 5 regiões brasileiras?", answer: "Norte, Nordeste, Centro-Oeste, Sudeste e Sul." },
+    { id: 77, category: 'Geografia', question: "O que é a Amazônia Legal?", answer: "Área que engloba nove estados para fins de planejamento e desenvolvimento." },
+    { id: 78, category: 'Geografia', question: "O que caracteriza o Bioma Mata Atlântica?", answer: "Floresta tropical úmida da costa brasileira, altamente biodiversa e ameaçada." },
+    { id: 79, category: 'Geografia', question: "O que é o Pantanal?", answer: "Maior planície inundável do mundo, localizada no Centro-Oeste." },
+    { id: 80, category: 'Geografia', question: "O que é migração pendular?", answer: "Deslocamento diário entre município de residência e trabalho/estudo." },
+    { id: 81, category: 'Geografia', question: "O que é conurbação?", answer: "Fusão de áreas urbanas de municípios vizinhos formando mancha urbana contínua." },
+    { id: 82, category: 'Geografia', question: "Diferença entre clima e tempo?", answer: "Clima é padrão de longo prazo; tempo é condição atmosférica momentânea." },
+    { id: 83, category: 'Geografia', question: "O que é o Polígono das Secas?", answer: "Região do Nordeste caracterizada por estiagens prolongadas e irregularidade de chuvas." },
+    { id: 84, category: 'Geografia', question: "O que são as Regiões Metropolitanas?", answer: "Conjuntos de municípios integrados econômica e socialmente a uma metrópole." },
+    { id: 85, category: 'Geografia', question: "O que é êxodo rural?", answer: "Migração de pessoas do campo para as cidades." },
+    { id: 86, category: 'Geografia', question: "O que caracteriza o Clima Equatorial?", answer: "Temperaturas elevadas e chuvas abundantes durante todo o ano." },
+    { id: 87, category: 'Geografia', question: "O que é a Caatinga?", answer: "Bioma exclusivamente brasileiro com vegetação adaptada à seca." },
+    { id: 88, category: 'Geografia', question: "O que é transição demográfica?", answer: "Mudança de altas para baixas taxas de natalidade e mortalidade." },
+    { id: 89, category: 'Geografia', question: "O que são as Mesorregiões?", answer: "Subdivisões dos estados que guardam especificidades geográficas e econômicas." },
+    { id: 90, category: 'Geografia', question: "O que é inversão térmica?", answer: "Fenômeno onde camada de ar frio fica abaixo de ar quente, prendendo poluentes." },
+    { id: 91, category: 'Geografia', question: "O que caracteriza o Pampa?", answer: "Bioma de campos do sul do Brasil, com vegetação rasteira." },
+    { id: 92, category: 'Geografia', question: "O que é a Taxa de Fecundidade?", answer: "Número médio de filhos por mulher em idade reprodutiva." },
+    { id: 93, category: 'Geografia', question: "O que é o Aquífero Guarani?", answer: "Uma das maiores reservas de água subterrânea do mundo." },
+    { id: 94, category: 'Geografia', question: "O que caracteriza o planalto?", answer: "Superfície elevada e relativamente plana, com bordas mais altas que o centro." },
+    { id: 95, category: 'Geografia', question: "O que é bacia hidrográfica?", answer: "Área drenada por um rio principal e seus afluentes." },
+
+    // --- PORTUGUÊS: FOCO EM GRAMÁTICA E INTERPRETAÇÃO (15 cards) ---
+    { id: 96, category: 'Português', question: "Qual a função da vírgula em enumerações?", answer: "Separar elementos de mesma função sintática em uma lista." },
+    { id: 97, category: 'Português', question: "O que é 'Coesão Textual'?", answer: "A ligação lógica entre as partes do texto através de conectivos." },
+    { id: 98, category: 'Português', question: "Sinônimo de 'Paulatinamente'?", answer: "Gradualmente; aos poucos." },
+    { id: 99, category: 'Português', question: "O que é o sentido Conotativo?", answer: "O sentido figurado, subjetivo das palavras." },
+    { id: 100, category: 'Português', question: "Regência do verbo 'Visar' (no sentido de objetivo)?", answer: "É transitivo indireto (quem visa, visa A alguma coisa)." },
+    { id: 101, category: 'Português', question: "O que é sujeito indeterminado?", answer: "Quando não se pode ou não se quer identificar quem pratica a ação." },
+    { id: 102, category: 'Português', question: "Diferença entre 'mal' e 'mau'?", answer: "Mal é advérbio (oposto de bem); Mau é adjetivo (oposto de bom)." },
+    { id: 103, category: 'Português', question: "O que é aposto?", answer: "Termo que explica, resume ou especifica outro termo da oração." },
+    { id: 104, category: 'Português', question: "Quando usar 'há' ou 'a' indicando tempo?", answer: "Há indica tempo passado; A indica tempo futuro." },
+    { id: 105, category: 'Português', question: "O que é predicado nominal?", answer: "Aquele cujo núcleo é um nome (substantivo, adjetivo) ligado por verbo de ligação." },
+    { id: 106, category: 'Português', question: "O que é polissemia?", answer: "Capacidade de uma palavra ter múltiplos significados." },
+    { id: 107, category: 'Português', question: "Diferença entre 'onde' e 'aonde'?", answer: "Onde indica permanência; Aonde indica movimento (destino)." },
+    { id: 108, category: 'Português', question: "O que é oração subordinada?", answer: "Oração que depende sintaticamente de outra (principal) para ter sentido completo." },
+    { id: 109, category: 'Português', question: "O que é ambiguidade?", answer: "Duplo sentido causado por má construção da frase." },
+    { id: 110, category: 'Português', question: "Plural de 'cidadão'?", answer: "Cidadãos." }
 ];
 
 // ============================================
@@ -127,10 +181,19 @@ class SRSManager {
         const saved = localStorage.getItem('eekcards_category_performance');
         if (saved) {
             this.categoryPerformance = JSON.parse(saved);
+            // Adicionar categorias que possam estar faltando
+            const categories = ['Ética', 'Técnico', 'Geografia', 'Português'];
+            categories.forEach(cat => {
+                if (!this.categoryPerformance[cat]) {
+                    this.categoryPerformance[cat] = { correct: 0, total: 0 };
+                }
+            });
         } else {
             this.categoryPerformance = {
-                'Ética IBGE': { correct: 0, total: 0 },
-                'Setor Censitário': { correct: 0, total: 0 }
+                'Ética': { correct: 0, total: 0 },
+                'Técnico': { correct: 0, total: 0 },
+                'Geografia': { correct: 0, total: 0 },
+                'Português': { correct: 0, total: 0 }
             };
             this.saveCategoryPerformance();
         }
