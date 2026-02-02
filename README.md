@@ -8,7 +8,8 @@ Progressive Web App para estudos do concurso **IBGE - Agente de Pesquisas e Mape
 - 🧠 **Sistema SRS (SM-2)**: Repetição espaçada inteligente
 - 💬 **Tutor Dinâmico**: Mensagens motivacionais contextuais
 - 📱 **100% Offline**: Funciona sem internet
-- 📊 **10 Flashcards**: Ética IBGE + Setor Censitário
+- 📊 **110 Flashcards**: Ética, Técnico, Geografia e Português
+- 📈 **Gráfico Radar**: Visualize seu desempenho por categoria
 - 🎨 **Animações 3D**: Flip suave dos cards
 
 ## 🚀 Início Rápido
@@ -94,18 +95,36 @@ eekcards/
 
 ## 📖 Conteúdo
 
-### Código de Ética IBGE (6 cards)
-- Objetivos e princípios
-- Deveres com dados
-- Sigilo estatístico
-- Valores éticos
-- Conduta profissional
+**110 Flashcards** organizados em 4 categorias:
 
-### Setor Censitário (4 cards)
-- Definições
-- Tipos de setores
-- Critérios de delimitação
-- Importância operacional
+### Ética (25 cards)
+- Primado do bem comum
+- Moralidade administrativa
+- Transparência e verdade
+- Sigilo estatístico
+- Conflito de interesses
+- Probidade e imparcialidade
+
+### Técnico (40 cards)
+- Setor Censitário
+- Domicílios (Particular, Coletivo)
+- DMC (Dispositivo Móvel de Coleta)
+- Questionários e coleta
+- Mapeamento e croquis
+- Procedimentos operacionais
+
+### Geografia (30 cards)
+- Regiões brasileiras
+- Biomas (Amazônia, Cerrado, Caatinga, Pampa, Mata Atlântica, Pantanal)
+- Demografia e urbanização
+- Bacias hidrográficas
+- Climatologia
+
+### Português (15 cards)
+- Gramática aplicada
+- Interpretação de texto
+- Regência verbal
+- Coesão e coerência
 
 ## 🌙 Tutor Dinâmico
 
