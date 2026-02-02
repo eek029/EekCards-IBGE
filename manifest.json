@@ -1,0 +1,61 @@
+{
+  "name": "EekCards - Estudos IBGE",
+  "short_name": "EekCards",
+  "description": "PWA de estudos para concurso IBGE - Agente de Pesquisas e Mapeamento",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#161616",
+  "orientation": "portrait",
+  "scope": "/",
+  "lang": "pt-BR",
+  "categories": ["education", "productivity"],
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%2300f5ff;stop-opacity:1' /><stop offset='100%' style='stop-color:%23b700ff;stop-opacity:1' /></linearGradient></defs><rect width='512' height='512' rx='115' fill='%23161616'/><circle cx='256' cy='200' r='80' fill='url(%23grad)'/><rect x='156' y='290' width='200' height='20' rx='10' fill='url(%23grad)'/><rect x='156' y='330' width='200' height='20' rx='10' fill='url(%23grad)' opacity='0.7'/><rect x='156' y='370' width='140' height='20' rx='10' fill='url(%23grad)' opacity='0.5'/></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><defs><linearGradient id='grad' x1='0%' y1='0%' x2='100%' y2='100%'><stop offset='0%' style='stop-color:%2300f5ff;stop-opacity:1' /><stop offset='100%' style='stop-color:%23b700ff;stop-opacity:1' /></linearGradient></defs><rect width='192' height='192' rx='43' fill='%23161616'/><circle cx='96' cy='75' r='30' fill='url(%23grad)'/><rect x='58' y='110' width='76' height='8' rx='4' fill='url(%23grad)'/><rect x='58' y='125' width='76' height='8' rx='4' fill='url(%23grad)' opacity='0.7'/><rect x='58' y='140' width='53' height='8' rx='4' fill='url(%23grad)' opacity='0.5'/></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 540 720'><rect width='540' height='720' fill='%230a0a0a'/><text x='270' y='360' font-size='48' fill='%2300f5ff' text-anchor='middle' font-family='Arial'>📚 EekCards</text><text x='270' y='420' font-size='24' fill='%23ffffff' text-anchor='middle' font-family='Arial'>Sistema de Repetição Espaçada</text></svg>",
+      "sizes": "540x720",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Estudar Agora",
+      "short_name": "Estudar",
+      "description": "Iniciar sessão de estudos",
+      "url": "/",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><text y='70' font-size='70'>📚</text></svg>",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Estatísticas",
+      "short_name": "Stats",
+      "description": "Ver progresso de estudos",
+      "url": "/?view=stats",
+      "icons": [
+        {
+          "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 96 96'><text y='70' font-size='70'>📊</text></svg>",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false
+}

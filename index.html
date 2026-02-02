@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="PWA de estudos para concurso IBGE - Agente de Pesquisas e Mapeamento">
+    <meta name="theme-color" content="#161616">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <title>EekCards - Estudos IBGE</title>
+
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" type="image/png"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Componente Tutor Dinâmico -->
+    <header class="tutor-header">
+        <div class="tutor-avatar">🎓</div>
+        <div class="tutor-message">
+            <h1 id="tutor-greeting">Carregando...</h1>
+            <p id="tutor-advice">Preparando seu estudo...</p>
+        </div>
+        <div class="connection-status" id="connection-status">
+            <span class="status-dot"></span>
+            <span class="status-text">Offline</span>
+        </div>
+    </header>
+
+    <!-- Estatísticas de Progresso -->
+    <section class="stats-container">
+        <div class="stat-card">
+            <div class="stat-value" id="total-studied">0</div>
+            <div class="stat-label">Estudados</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="total-reviews">0</div>
+            <div class="stat-label">Revisões</div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-value" id="streak-days">0</div>
+            <div class="stat-label">Dias Seguidos</div>
+        </div>
+    </section>
+
+    <!-- Cronograma de Estudo -->
+    <section class="study-plan">
+        <h2>📊 Distribuição Recomendada</h2>
+        <div class="plan-bars">
+            <div class="plan-bar">
+                <div class="bar-fill" style="width: 35%; background: linear-gradient(90deg, #00f5ff, #0099ff);">
+                    <span class="bar-label">Técnicos 35%</span>
+                </div>
+            </div>
+            <div class="plan-bar">
+                <div class="bar-fill" style="width: 30%; background: linear-gradient(90deg, #00ff88, #00cc66);">
+                    <span class="bar-label">Geografia 30%</span>
+                </div>
+            </div>
+            <div class="plan-bar">
+                <div class="bar-fill" style="width: 25%; background: linear-gradient(90deg, #ff00ff, #cc00cc);">
+                    <span class="bar-label">Português 25%</span>
+                </div>
+            </div>
+            <div class="plan-bar">
+                <div class="bar-fill" style="width: 10%; background: linear-gradient(90deg, #ffaa00, #ff6600);">
+                    <span class="bar-label">Matemática 10%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Container do Flashcard -->
+    <main class="flashcard-container">
+        <div class="card-wrapper">
+            <div class="flashcard" id="flashcard">
+                <div class="card-face card-front">
+                    <div class="card-category" id="card-category">Carregando...</div>
+                    <div class="card-content" id="card-question">
+                        Preparando seus flashcards...
+                    </div>
+                    <div class="card-footer">
+                        <span class="card-count" id="card-count">0/0</span>
+                        <button class="flip-hint" onclick="flipCard()">Toque para revelar</button>
+                    </div>
+                </div>
+                <div class="card-face card-back">
+                    <div class="card-category" id="card-category-back">Resposta</div>
+                    <div class="card-content" id="card-answer">
+                        Resposta aparecerá aqui
+                    </div>
+                    <div class="card-footer">
+                        <button class="flip-hint" onclick="flipCard()">Voltar à pergunta</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controles de Avaliação (SRS) -->
+        <div class="controls" id="controls">
+            <div class="difficulty-buttons">
+                <button class="btn-difficulty btn-hard" onclick="rateCard(0)" title="Errei completamente">
+                    <span class="btn-emoji">😰</span>
+                    <span class="btn-text">Errei</span>
+                    <span class="btn-interval">1 dia</span>
+                </button>
+                <button class="btn-difficulty btn-medium" onclick="rateCard(3)" title="Acertei com dificuldade">
+                    <span class="btn-emoji">🤔</span>
+                    <span class="btn-text">Difícil</span>
+                    <span class="btn-interval">3 dias</span>
+                </button>
+                <button class="btn-difficulty btn-easy" onclick="rateCard(5)" title="Acertei facilmente">
+                    <span class="btn-emoji">😎</span>
+                    <span class="btn-text">Fácil</span>
+                    <span class="btn-interval">7 dias</span>
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Rodapé com Ações -->
+    <footer class="app-footer">
+        <button class="footer-btn" onclick="resetProgress()" title="Resetar progresso">
+            <span class="footer-icon">🔄</span>
+            <span class="footer-label">Resetar</span>
+        </button>
+        <button class="footer-btn" onclick="showStats()" title="Ver estatísticas">
+            <span class="footer-icon">📈</span>
+            <span class="footer-label">Stats</span>
+        </button>
+        <button class="footer-btn" onclick="exportData()" title="Exportar dados">
+            <span class="footer-icon">💾</span>
+            <span class="footer-label">Exportar</span>
+        </button>
+    </footer>
+
+    <!-- Modal de Estatísticas -->
+    <div class="modal" id="stats-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>📊 Suas Estatísticas</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="stats-details">
+                <!-- Gráfico de Desempenho -->
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="font-size: 1rem; margin-bottom: 1rem; text-align: center;">📊 Desempenho por Categoria
+                    </h3>
+                    <canvas id="performanceChart"></canvas>
+                </div>
+
+                <!-- Estatísticas detalhadas -->
+                <div id="detailed-stats">
+                    <!-- Conteúdo gerado dinamicamente -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
