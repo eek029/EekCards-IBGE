@@ -2,6 +2,10 @@
 
 Progressive Web App para estudos do concurso **IBGE - Agente de Pesquisas e Mapeamento**, otimizada para uso offline durante plantões noturnos.
 
+## 🌐 Acesso Online
+
+**🚀 [Abrir Aplicativo](https://eek029.github.io/EekCards-IBGE/)** - Use direto no navegador!
+
 ## ✨ Características
 
 - 🌙 **Design Cyber-Dark**: Alta legibilidade em ambientes escuros
